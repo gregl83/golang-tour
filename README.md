@@ -15,6 +15,21 @@ Go programming language tour files.
 
     $ ./bin/golang-tour [tour-group] [tour-name]
 
+## Tours
+
+For simplicity of running specific tour files tours have been divided into groups and names.
+
+### Groups
+
+- basics
+- flowcontrol
+- methods
+- moretypes
+
+### Names
+
+Too many to list here, see the directories matching groups above and use respective filenames.
+
 ## License
 
 MIT
