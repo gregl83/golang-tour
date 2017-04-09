@@ -18,7 +18,7 @@ func main() {
 	// The players take turns.
 	game[0][0] = "X"
 	game[2][2] = "O"
-	game[2][0] = "X"
+	game[1][2] = "X"
 	game[1][0] = "O"
 	game[0][2] = "X"
 

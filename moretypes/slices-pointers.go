@@ -6,7 +6,7 @@ import "fmt"
 
 func main() {
 	names := [4]string{
-		"Jonh",
+		"John",
 		"Paul",
 		"George",
 		"Ringo",

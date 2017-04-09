@@ -13,7 +13,7 @@ func run(module, lesson string) {
 	commandPath := fmt.Sprintf(pathTemplate, module, lesson)
 	command := exec.Command("/usr/bin/go", "run", commandPath)
 
-	fmt.Printf("Running command: %s\r\n\r\n", commandPath)
+	fmt.Printf("Running command: %s", commandPath)
 
 	var stdOut, stdErr bytes.Buffer
 	command.Stdout = &stdOut
@@ -23,8 +23,11 @@ func run(module, lesson string) {
 		log.Fatal(err)
 	}
 
-	fmt.Println(stdErr.String(), stdOut.String())
-
+	fmt.Println()
+	fmt.Println(stdErr.String())
+	fmt.Println()
+	fmt.Println(stdOut.String())
+	fmt.Println()
 	fmt.Println("Command completed")
 }
 
