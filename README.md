@@ -13,20 +13,20 @@ Go programming language tour files.
 
 ## Usage
 
-    $ ./bin/golang-tour [tour-group] [tour-name]
+    $ ./bin/golang-tour [module] [lesson]
 
 ## Tours
 
-For simplicity of running specific tour files tours have been divided into groups and names.
+To aid following along the Go tour lessons are stored in respective module directories.
 
-### Groups
+### Modules
 
 - basics
 - flowcontrol
 - methods
 - moretypes
 
-### Names
+### Lessons
 
 Too many to list here, see the directories matching groups above and use respective filenames.
 

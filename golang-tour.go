@@ -8,12 +8,12 @@ import (
 	"log"
 )
 
-func run(group, name string) {
+func run(module, lesson string) {
 	pathTemplate := "src/github.com/gregl83/golang-tour/%s/%s.go"
-	commandPath := fmt.Sprintf(pathTemplate, group, name)
+	commandPath := fmt.Sprintf(pathTemplate, module, lesson)
 	command := exec.Command("/usr/bin/go", "run", commandPath)
 
-	fmt.Printf("Running command: %s \r\n\r\n", commandPath)
+	fmt.Printf("Running command: %s\r\n\r\n", commandPath)
 
 	var stdOut, stdErr bytes.Buffer
 	command.Stdout = &stdOut
@@ -29,8 +29,8 @@ func run(group, name string) {
 }
 
 func main() {
-	group := os.Args[1]
-	name := os.Args[2]
+	module := os.Args[1]
+	lesson := os.Args[2]
 
-	run(group, name)
+	run(module, lesson)
 }
