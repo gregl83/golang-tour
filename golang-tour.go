@@ -5,7 +5,6 @@ import (
 	"os"
 	"os/exec"
 	"bytes"
-	"log"
 )
 
 func run(module, lesson string) {
@@ -18,17 +17,19 @@ func run(module, lesson string) {
 	var stdOut, stdErr bytes.Buffer
 	command.Stdout = &stdOut
 	command.Stderr = &stdErr
-	err := command.Run()
-	if err != nil {
-		log.Fatal(err)
-	}
+	command.Run()
 
 	fmt.Println()
-	fmt.Println(stdErr.String())
 	fmt.Println()
+
 	fmt.Println(stdOut.String())
-	fmt.Println()
-	fmt.Println("Command completed")
+
+	if stdError := stdErr.String(); stdError != "" {
+		fmt.Println(stdError)
+		fmt.Println("Command failed")
+	} else {
+		fmt.Println("Command completed")
+	}
 }
 
 func main() {
