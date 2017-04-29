@@ -33,8 +33,10 @@ func run(module, lesson string) {
 }
 
 func main() {
-	module := os.Args[1]
-	lesson := os.Args[2]
+	if len(os.Args) < 3 {
+		fmt.Println("Module and lesson arguments are required")
+		return
+	}
 
-	run(module, lesson)
+	run(os.Args[1], os.Args[2])
 }
