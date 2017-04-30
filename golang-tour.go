@@ -1,15 +1,21 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
+	"path/filepath"
+	"runtime"
 	"bytes"
+	"fmt"
+)
+
+var (
+	_, base, _, _ = runtime.Caller(0)
+	basepath = filepath.Dir(base)
 )
 
 func run(module, lesson string) {
-	pathTemplate := "src/github.com/gregl83/golang-tour/%s/%s.go"
-	commandPath := fmt.Sprintf(pathTemplate, module, lesson)
+	commandPath := fmt.Sprintf("%s/%s/%s.go", basepath, module, lesson)
 	command := exec.Command("/usr/bin/go", "run", commandPath)
 
 	fmt.Printf("Running command: %s", commandPath)
